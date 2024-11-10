@@ -1,0 +1,819 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+ 
+}
+.AppContainer {
+  background-color: #171d32; /* bg-[#171d32] */
+  height: auto; /* h-auto */
+  width: 100%; /* w-full */
+  overflow: hidden; /* overflow-hidden */
+}
+.navbar {
+  background-color: #171d32;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  color: white;
+  width: 100%;
+}
+
+.navbar-brand {
+  font-size: 1.25rem /* 20px */;
+  line-height: 1.75rem /* 28px */;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+/* Navbar links */
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 0.5rem;
+  display: none; /* Default to hidden for mobile */
+  margin-left: 6rem /* 96px */;
+  margin-right: 6rem /* 96px */;
+}
+.navbar .navbar-links a{
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.navbar-links.active {
+  display: block; /* Show the menu when it's active */
+}
+
+.navbar-item {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.25rem 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-item:hover {
+  text-decoration: underline;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Navbar icon for mobile */
+.navbar-icon {
+  position: absolute;
+  top: 1.5rem;
+  right: 2.5rem;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+/* Responsive styles for larger screens */
+@media (min-width: 768px) {
+  .navbar-links {
+    display: flex;
+    position: static;
+    background-color: transparent;
+    border: none;
+    gap: 1.5rem;
+  }
+
+  .navbar-icon {
+    display: none; /* Hide the menu icon on larger screens */
+  }
+  
+  .navbar{
+    justify-content: space-between;
+  
+
+  }
+}
+
+
+/* Main container for home section */
+.home-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2.5rem 1rem; /* p-10 */
+  color: white;
+  width: 100%;
+}
+
+.home-text {
+  flex: 1;
+  padding-top: 2.5rem; /* md:pt-10 */
+  max-width: 50%; /* md:w-2/4 */
+}
+
+/* Main title */
+.home-title {
+  
+  font-weight: bold;
+  padding: 1rem 0; /* py-4 */
+}
+
+/* Subtitle under main title */
+.home-subtitle {
+  display: flex;
+ font-size: 20px;
+  font-weight: bold;
+  line-height: 1.5;
+  letter-spacing: -0.05em; /* tracking-tighter */
+}
+
+/* Highlighted text color */
+.highlight-text {
+  color: #465697;
+  padding-left: 0.5rem; /* px-2 */
+  padding-right: 0.5rem; /* px-2 */
+}
+
+/* Description text */
+.home-description {
+  font-size: 1rem; /* text-sm */
+  line-height: 1.6;
+  padding: 1rem 0; /* py-4 */
+  max-width: 90%; /* To prevent it from stretching too wide on large screens */
+}
+
+/* Button styling */
+.home-button {
+  margin-top: 1.25rem; /* mt-5 */
+  padding: 0.5rem 1rem; /* py-2 px-4 for large screens */
+  font-size: 1rem; /* text-sm */
+  font-weight: 600; /* font-semibold */
+  background-color: #465697;
+  color: white;
+  border-radius: 1.5rem; /* rounded-3xl */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.home-button:hover {
+  opacity: 0.85;
+  transform: scale(1.05);
+}
+
+/* Image styling */
+.home-image {
+  flex: 1;
+  max-width: 35%;
+}
+
+.home-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Responsive styles for mobile and tablet screens */
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 1.25rem; /* p-5 on smaller screens */
+  }
+
+  .home-text {
+    max-width: 100%;
+    padding-top: 0;
+    text-align: center;
+  }
+
+  .home-title {
+    font-size: 2rem; /* md:text-6xl */
+    text-align: center;
+  }
+
+  .home-subtitle {
+    flex-direction: column;
+    font-size: 1.25rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .home-description {
+    font-size: 1rem; /* md:text-xl */
+    text-align: center;
+    padding: 0.5rem 0;
+  }
+
+  .home-button {
+    font-size: 1.125rem; /* md:text-lg */
+    padding: 0.75rem 1.5rem; /* md:py-2 md:px-4 */
+  }
+
+  .home-image {
+    max-width: 100%; /* Reduce image size on mobile */
+    margin-top: 1rem;
+  }
+}
+/* TextChange.css */
+.text-change {
+  
+  transition: all 0.3s ease; /* Equivalent to 'transition ease duration-300' in Tailwind */
+}
+
+/* About section container */
+.about-container {
+  color: white; /* text-white */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background: rgba(2, 14, 46, 0.842);/* bg-black */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* shadow-xl */
+  margin:0 5rem ; /* my-20 */
+  padding: 2.5rem; /* p-10 */
+  border-radius: 0.5rem; /* rounded-lg */
+  
+}
+
+
+.about-title {
+  font-size: 2rem; /* text-2xl */
+  font-weight: bold;
+  margin-bottom: 1.5rem; /* Spacing between title and content */
+}
+
+.about-content {
+  
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  gap: 2rem;
+}
+
+.about-image {
+  max-height: 20rem; /* md:h-80 */
+  width: auto;
+  border-radius: 8px;
+}
+
+.about-description {
+  display: flex;
+ font-size: 0.75rem;
+  gap: 1rem;
+}
+
+.about-item {
+  display: flex;
+  gap: 1rem;
+  padding-top: 1rem /* 16px */;
+    padding-bottom: 1rem /* 16px */;
+    
+}
+
+.about-icon {
+  margin-top: 0.25rem; /* mt-1 */
+}
+
+.about-text {
+  width: 24rem; /* w-96 */
+}
+
+.about-role {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 600; /* font-semibold */
+  line-height: 1.5;
+}
+
+.about-paragraph {
+  font-size: 1rem; /* text-sm */
+  line-height: 1.6;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For medium screens (tablets and below) */
+@media (max-width: 768px) {
+  .about-container {
+    flex-wrap: wrap; /* md:flex-wrap */
+    margin: 0/* md:mx-20 */
+  
+  }
+  .about-content img{
+    max-width: 100%;
+  }
+
+  .about-title {
+    font-size: 2.5rem; /* Larger title size for small screens */
+    text-align: center;
+  }
+
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+  .about-description {
+    width: 100%;
+    
+  }
+.about-icon{
+  width: 25px;
+}
+
+  .about-text {
+    width: 100%; /* Take full width on small screens */
+  }
+
+  .about-role {
+    font-size: 1.3rem;
+    text-wrap: nowrap; 
+  }
+
+  .about-paragraph {
+    font-size: 15px; /* Increased font size for better readability */
+  }
+}
+
+/* Container */
+#skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+  margin-top: 5rem; /* my-20 */
+  margin-bottom: 5rem; /* my-20 */
+  padding-left: 2rem; /* px-8 */
+  padding-right: 2rem; /* px-8 */
+}
+/* General styles */
+.skills-wrapper {
+  position: relative; /* equivalent to `relative` */
+  display: flex; /* equivalent to `flex` */
+  flex-direction: column; /* equivalent to `flex-col` */
+  align-items: center; /* equivalent to `items-center` */
+  justify-content: space-between; /* equivalent to `justify-between` */
+  width: 100%; /* equivalent to `w-full` */
+  max-width: 1280px; /* equivalent to `max-w-5xl` */
+  gap: 2rem; /* equivalent to `gap-8` */
+}
+
+/* On medium screens and larger */
+@media (min-width: 768px) {
+ 
+
+
+@media (min-width: 768px) {
+  #skills {
+    padding-left: 4rem; /* md:px-16 */
+    padding-right: 4rem; /* md:px-16 */
+  }
+  .skills-wrapper {
+    gap: 3rem; /* equivalent to `md:gap-12` */
+    flex-direction: column; /* equivalent to `md:flex-col` */
+  }
+}
+}
+
+
+/* Skill Title */
+.skills-title {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: bold;
+  color: white;
+  margin-top: 1rem; /* md:mt-3 */
+  margin-bottom: 1.25rem; /* mb-5 */
+}
+
+@media (min-width: 768px) {
+  .skills-title {
+    font-size: 2.25rem; /* md:text-4xl */
+    margin-bottom: 0; /* md:mb-0 */
+  }
+}
+
+/* Skill Cards Wrapper */
+.skills-cards {
+  display: flex;
+  flex-wrap: wrap;
+  
+  gap: 2rem; /* gap-8 */
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .skills-cards {
+    flex-direction: row; /* md:flex-row */
+  }
+}
+
+/* Individual Skill Card */
+.skill-card {
+  width: 100%;
+  max-width: 25rem; /* sm:max-w-xs */
+  background: rgba(1, 9, 31, 0.966); /* bg-slate-900 */
+  border: 1px solid #475569; /* border-slate-700 */
+  color: white;
+  box-shadow: 0px 4px 28px rgba(23, 92, 230, 0.2); /* shadow-lg */
+  border-radius: 0.75rem; /* rounded-xl */
+  padding: 1rem; /* p-4 */
+  margin-left: 1rem; /* mx-4 */
+  margin-right: 1rem; /* mx-4 */
+  transition: all 0.5s ease-in-out;
+  transform-style: preserve-3d;
+  perspective: 1500px;
+  cursor: pointer; /* Adds a pointer cursor to indicate interactivity */
+}
+
+.skill-card:hover {
+  transform: scale(1.05) translateY(-1rem); /* hover:scale-105 hover:translate-y-4 */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3); /* hover:shadow-2xl */
+}
+
+/* Skill Title in Cards */
+.skill-card h2 {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 600; /* font-semibold */
+  text-align: center;
+  margin-bottom: 1rem; /* mb-4 */
+}
+
+/* Skill Items */
+.skill-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem; /* gap-2 */
+  margin-bottom: 1rem; /* mb-4 */
+  justify-content: center;
+}
+
+.skill-item {
+  font-size: 0.875rem; /* text-sm */
+  font-weight: normal;
+  color: #dbeafe; /* text-primary-light */
+  border: 1px solid #dbeafe; /* border-primary-light */
+  border-radius: 0.75rem; /* rounded-xl */
+  padding: 0.5rem 0.75rem; /* px-3 py-2 */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* gap-2 */
+  justify-content: center;
+}
+
+.skill-item img {
+  width: 1.25rem; /* w-5 */
+  height: 1.25rem; /* h-5 */
+}
+
+@media (min-width: 640px) {
+  .skill-item {
+    font-size: 0.75rem; /* sm:text-xs */
+    padding: 0.25rem 0.5rem; /* sm:px-2 */
+  }
+}
+
+
+/* ProjectCard container */
+.project-card {
+  width: 20rem; /* equivalent to w-80 */
+  max-width: 32rem; /* equivalent to max-w-lg */
+  background: rgb(1, 9, 31); /* bg-slate-900 */
+  border: 1px solid #1e293b; /* border-slate-900 */
+  color: white; /* text-white */
+  border-radius: 0.75rem; /* rounded-xl */
+  padding: 1rem; /* p-3 */
+  
+  transition: all 0.5s ease-in-out; /* transition-all duration-500 ease-in-out */
+}
+
+.project-card:hover {
+  transform: scale(1.05) translateY(-1rem); /* hover:scale-105 hover:translate-y-4 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* hover:shadow-2xl */
+}
+
+/* Responsive styles for medium screens */
+@media (min-width: 768px) {
+  .project-card {
+
+    max-width: 28rem; /* md:max-w-md */
+    padding: 1.5rem; /* md:p-6 */
+  }
+}
+
+/* Title and description styles */
+.project-card h3 {
+  padding-left: 1rem; /* equivalent to px-4 */
+  padding-right: 1rem; /* equivalent to px-4 */
+  font-size: 1.25rem; /* text-xl */
+  font-weight: bold; /* font-bold */
+  line-height: 1.5rem; /* leading-normal */
+}
+
+.project-card p {
+  padding-left: 1rem; /* equivalent to px-4 */
+  padding-right: 1rem; /* equivalent to px-4 */
+  font-size: 1rem; /* text-sm */
+  line-height: 1.5rem; /* leading-tight */
+  padding-top: 0.5rem; /* py-2 */
+  padding-bottom: 0.5rem; /* py-2 */
+}
+
+.project-card .buttons {
+  display: flex;
+  gap: 0.5rem; /* gap-2 */
+  padding-top: 30px
+}
+
+.project-card .buttons a button {
+  padding: 0.5rem 1rem; /* py-2 px-3 */
+  font-size: 1rem; /* text-sm */
+  font-weight: 600; /* font-semibold */
+  border-radius: 1.5rem; /* rounded-3xl */
+  background-color: #465697; /* bg-[#465697] */
+  color: white; /* text-white */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* hover:scale-105 and hover:opacity-85 */
+}
+
+.project-card .buttons a button:hover {
+  transform: scale(1.05); /* hover:scale-105 */
+  opacity: 0.85; /* hover:opacity-85 */
+}
+
+/* Larger button font size on medium screens */
+@media (min-width: 768px) {
+  .project-card .buttons a button {
+    font-size: 1.125rem; /* md:text-lg */
+    padding: 0.75rem 1.25rem; /* md:py-2 md:px-4 */
+  }
+}
+
+.project-card img {
+  padding: 1rem; /* p-4 */
+  width: 100%; /* Make the image responsive */
+  object-fit: cover; /* Keeps the aspect ratio */
+}
+
+
+/* Container Styles */
+.projects-container {
+  color: white; /* text-white */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background: rgba(2, 14, 46, 0.842);/* bg-black */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* shadow-xl */
+  margin: 5rem 0; /* my-20 */
+  padding: 2.5rem; /* p-10 */
+  border-radius: 0.5rem; /* rounded-lg */
+  
+}
+
+@media (min-width: 768px) {
+  .projects-container {
+    margin: 5rem 5rem; /* md:mx-20 */
+  }
+}
+
+/* Header */
+.projects-header {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: bold; /* font-bold */
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .projects-header {
+    font-size: 2.25rem; /* md:text-4xl */
+  }
+}
+
+/* Project Cards Wrapper */
+.project-cards-wrapper {
+  padding: 3rem 2rem; /* py-12 px-8 */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem; /* gap-5 */
+  justify-content: center;
+}
+
+/* Contact.css */
+
+/* Container for the contact section */
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+  padding: 3rem 0;
+}
+
+/* Content area */
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 768px;
+  gap: 1.25rem;
+  padding: 0 1rem;
+  padding-bottom: 5rem;
+  text-align: center;
+}
+
+/* Heading */
+.contact-heading {
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+  margin-top: 1.25rem;
+}
+
+.contact-heading {
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+  .contact-heading {
+    font-size: 2.5rem;
+  }
+}
+
+/* Subheading */
+.contact-subheading {
+  font-size: 1.25rem;
+  color: white;
+  max-width: 640px;
+}
+
+.contact-subheading {
+  font-size: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .contact-subheading {
+    font-size: 1.125rem;
+  }
+}
+
+/* Form styling */
+.contact-form {
+  width: 100%;
+  max-width: 32rem;
+  background-color: rgba(1, 9, 31, 0.966);
+  box-shadow: 0px 4px 28px rgba(23, 92, 230, 0.2);  /* You can define the card bg color in a CSS variable */
+  padding: 2rem;
+  border-radius: 0.75rem;
+
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Form Title */
+.form-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.75rem;
+}
+
+/* Input fields styling */
+.form-input {
+  background-color: transparent;
+  border: 1px solid #8e8e8e;
+  color: #d3d3d3;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-size: 1.125rem;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.form-input:focus {
+  border-color: #465697;
+}
+
+/* Textarea styling */
+.form-textarea {
+  background-color: transparent;
+  border: 1px solid #8e8e8e;
+  color: #d3d3d3;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-size: 1.125rem;
+  outline: none;
+  resize: vertical;
+}
+
+.form-textarea:focus {
+  border-color: #465697;
+}
+
+/* Submit button */
+.form-submit {
+  width: 100%;
+  background-color: #1a2b70;
+  color: white;
+  font-weight: 600;
+  padding: 1rem;
+  border: 1px solid #1a2b70;
+  border-radius: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-submit:hover {
+}
+
+/* Snackbar position */
+.MuiSnackbar-root {
+  top: 20px;
+}
+
+
+/* Footer Container */
+#Footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(2, 14, 46, 0.842);
+  color: white;
+  padding: 1.5rem 2rem;
+  text-align: center;
+}
+
+.footer-heading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  align-items: center;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+.footer-nav  li{
+  list-style-type: none;
+}
+
+.footer-link {
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer-link:hover {
+  color: #a5b4fc; /* Primary light */
+}
+
+.footer-social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-social-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.social-icon {
+  transition: color 0.3s ease-in-out;
+}
+
+.social-link {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.social-link:hover, .social-icon:hover {
+  color: #a5b4fc; /* Primary light */
+}
+
+.footer-copy {
+  font-size: 0.875rem;
+  color: white;
+  text-align: center;
+  margin-top: 2rem;
+}
